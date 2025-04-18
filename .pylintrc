@@ -1,0 +1,44 @@
+[MASTER]
+# Maximum number of characters on a line to match Black's style
+max-line-length=88
+
+# Set output format
+output-format=colorized
+
+# Files or directories to ignore (e.g., migrations, virtual environments)
+ignore=venv
+
+[MESSAGES CONTROL]
+# Disable warnings that are often unnecessary in real-world projects
+disable=
+    invalid-name,  # Allow single-letter variables in small scopes
+    too-many-instance-attributes,  # Avoid warnings on large classes
+    too-few-public-methods,  # Ignore warnings on simple data classes
+    too-many-arguments,  # Ignore warnings when functions have many params
+    too-many-return-statements,  # Ignore complex logic return cases
+    logging-fstring-interpolation,  # Allow f-strings in logging
+    line-too-long,  # Allow long lines
+    redefined-outer-name,  # Allow redefining variables in outer scopes
+    unidiomatic-typecheck,  # Allow type checks with isinstance
+    too-many-positional-arguments,  # Allow many positional arguments
+
+[IMPORTS]
+# Allow wildcard imports (useful for libraries)
+allow-wildcard-with-all=yes
+
+[DESIGN]
+# Adjust complexity limits
+max-args=10  # Allow up to 10 arguments per function
+max-attributes=10  # Allow up to 10 instance attributes per class
+max-locals=20  # Allow up to 20 local variables in a function
+max-returns=7  # Allow up to 7 return statements in a function
+max-branches=15  # Allow up to 15 branches per function
+max-statements=50  # Allow up to 50 statements per function
+
+[TYPECHECK]
+# Ignore missing module docstrings for external libraries
+ignored-modules=requests,boto3
+
+[LOGGING]
+# Allow f-strings in logging (disabled default rule)
+logging-format-style=old
