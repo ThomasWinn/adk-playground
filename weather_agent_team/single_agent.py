@@ -150,6 +150,8 @@ async def run_conversation():
     await call_agent_async("Tell me the weather in New York")
 
 
+# use multiple LLM providers for a higher availability state or for use case dominant scenarios
+# wrapped in a try/except block and setup separate runner and session for tracking that provider
 if __name__ == "__main__":
     # Execute the conversation using await in an async context (like Colab/Jupyter)
     asyncio.run(run_conversation())
