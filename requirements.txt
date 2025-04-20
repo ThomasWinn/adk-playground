@@ -1,3 +1,6 @@
 google-adk
 litellm
 pre-commit
+autogen-agentchat
+autogen-ext[anthropic]
+python-dotenv
