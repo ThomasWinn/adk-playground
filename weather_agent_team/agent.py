@@ -61,10 +61,6 @@ def get_weather(city: str) -> dict:
         }
 
 
-# Example tool usage (optional self-test)
-print(get_weather("New York"))
-print(get_weather("Paris"))
-
 MODEL_CLAUDE_SONNET = "anthropic/claude-3-sonnet-20240229"
 
 # @title Define the Weather Agent
@@ -81,11 +77,6 @@ weather_agent = LlmAgent(
     tools=[get_weather],  # Make the tool available to this agent
 )
 
-print(f"Agent '{weather_agent.name}' created using model '{MODEL_CLAUDE_SONNET}'.")
-
-
-# @title Setup Session Service and Runner
-
 # --- Session Management ---
 # Key Concept: SessionService stores conversation history & state.
 # InMemorySessionService is simple, non-persistent storage for this tutorial.
@@ -100,7 +91,6 @@ SESSION_ID = "session_001"  # Using a fixed ID for simplicity
 session = session_service.create_session(
     app_name=APP_NAME, user_id=USER_ID, session_id=SESSION_ID
 )
-print(f"Session created: App='{APP_NAME}', User='{USER_ID}', Session='{SESSION_ID}'")
 
 # --- Runner ---
 # Key Concept: Runner orchestrates the agent execution loop.
@@ -109,9 +99,6 @@ runner = Runner(
     app_name=APP_NAME,  # Associates runs with our app
     session_service=session_service,  # Uses our session manager
 )
-print(f"Runner created for agent '{runner.agent.name}'.")
-print()
-print()
 
 # @title Define Agent Interaction Function
 import asyncio
