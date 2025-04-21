@@ -4,3 +4,6 @@ pre-commit
 autogen-agentchat
 autogen-ext[anthropic]
 python-dotenv
+praw
+asyncpraw
+nest-asynchio
